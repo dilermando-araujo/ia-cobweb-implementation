@@ -133,7 +133,21 @@ function render_tree() {
     draw(convert_cobweb_tree_to_draw_tree(root));
 }
 
+function is_valid_table_values(table_values) {
+    for (let i in table_values) {
+        for(let j in table_values[i]) {
+            if (table_values[i][j].trim() === '') return false;
+        }
+    }
+
+    return true;
+}
+
 function execute_cobweb() {
+    if (!is_valid_table_values(table_values)) {
+        alert("Existem campos em branco");
+        return;
+    }
 
     const table_headers_normalized = [];
     const table_rows_normalized = [];
