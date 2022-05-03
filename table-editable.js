@@ -1,7 +1,30 @@
-const table_values = [
+let table_values = [
     ['Body Temp', 'Body Cover'],
     ['Un', 'Hair']
 ];
+
+function set_default_dataset(dataset_idx) {
+
+    const datasets = {
+        1: [
+            ['Colour', 'Nuclei', 'Tails'],
+            ['white', '1', '1'],
+            ['white', '2', '2'],
+            ['black', '2', '2'],
+            ['black', '3', '1'],
+        ],
+        2: [
+            ['Body Cover', 'Heart Chamber', 'Body Temp', 'Fertilization'],
+            ['scales', '2', 'unregulated', 'external'],
+            ['moisk-skin', '3', 'unregulated', 'external'],
+            ['hair', '4', 'regulated', 'internal'],
+            ['feathers', '4', 'regulated', 'internal']
+        ]
+    }
+
+    table_values = datasets[dataset_idx];
+    render_table(table_values);
+}
 
 function change_table_value(i, j, value) {
     table_values[i][j] = value;
@@ -71,8 +94,10 @@ function add_row_to_table_value() {
 }
 
 function remove_row_from_table_value() {
-    table_values.pop();
-    render_table(table_values);
+    if (table_values.length > 1) {
+        table_values.pop();
+        render_table(table_values);
+    }
 }
 
 function render_tree() {

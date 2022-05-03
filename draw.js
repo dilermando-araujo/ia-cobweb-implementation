@@ -17,7 +17,7 @@ function convert_cobweb_tree_to_draw_tree(cobweb_tree) {
 }
 
 function draw(root) {
-    const map_name_to_short = generate_column_shorts_name(headers);
+    // const map_name_to_short = generate_column_shorts_name(headers);
 
     var margin = {
         top: 20,
@@ -30,11 +30,11 @@ function draw(root) {
 
     var i = 0,
         duration = 750,
-        rectW = 240,
+        rectW = 295,
         rectH = Object.keys(root.probilities).length * 16;
         depth_value = Object.keys(root.probilities).length * 25;
 
-    var tree = d3.layout.tree().nodeSize([250, rectH - 10]);
+    var tree = d3.layout.tree().nodeSize([310, rectH - 10]);
     var diagonal = d3.svg.diagonal()
         .projection(function (d) {
         return [d.x + rectW / 2, d.y + rectH / 2];
@@ -91,10 +91,9 @@ function draw(root) {
         const div = f.append('xhtml:div')
             .html(function (e) {
                 html = '<div style="padding: 2px;">';
-                for (let i in e.probilities) {
-                    const prob = i.split('|');
+                for (let i in e.probilities) { 
 
-                    html += `<p style="margin: 0; font-size: 12px;">P(${map_name_to_short[prob[0]] + '|' + prob[1]}) = ${e.probilities[i].toFixed(2)}</p>`
+                    html += `<p style="margin: 0; font-size: 12px;">P(${i.replace('|', ' | ')}) = ${e.probilities[i].toFixed(2)}</p>`
                 }
                 html += '</div>';
                 return html;
