@@ -32,6 +32,10 @@ class Node {
     }
 }
 
+const headers = [];
+const rows = [];
+const root = null;
+
 // tests
 // const headers = ['colour', 'nuclei', 'tails'];
 
@@ -42,16 +46,16 @@ class Node {
 //     ['black', '3', '1'],
 // ];
 
-const headers = ['body-cover', 'heart-chamber', 'body-temp', 'fertilization'];
+// const headers = ['body-cover', 'heart-chamber', 'body-temp', 'fertilization'];
 
-const rows = [
-    ['scales', '2', 'unregulated', 'external'],
-    ['moisk-skin', '3', 'unregulated', 'external'],
-    ['hair', '4', 'regulated', 'internal'],
-    ['feathers', '4', 'regulated', 'internal'],   
-    ['scales', '2', 'unregulated', 'external'], 
-    ['moisk-skin', '3', 'unregulated', 'external'],
-];
+// const rows = [
+//     ['scales', '2', 'unregulated', 'external'],
+//     ['moisk-skin', '3', 'unregulated', 'external'],
+//     ['hair', '4', 'regulated', 'internal'],
+//     ['feathers', '4', 'regulated', 'internal'],   
+//     ['scales', '2', 'unregulated', 'external'], 
+//     ['moisk-skin', '3', 'unregulated', 'external'],
+// ];
 
 // const headers = ['', 'body-temp', 'fertilization'];
 
@@ -87,7 +91,7 @@ function update_node_probilities(node, headers, instances) {
         const value_repetitions = get_value_repetition_amount(instance_values);
 
         for (let j in value_repetitions) {
-            node.setProbility(`${headers[i]}-${j}`, value_repetitions[j] / instance_values.length);
+            node.setProbility(`${headers[i]}|${j}`, value_repetitions[j] / instance_values.length);
         }
     }
 
@@ -285,22 +289,3 @@ function cobweb(root, instance) {
     }
 }
 
-// const root = initialize_tree(headers, rows[0]);
-// root.instances.push(rows[2]);
-// update_node_probilities(root, headers, root.instances);
-
-// const root2 = initialize_tree(headers, rows[1]);
-
-// console.log(root, root2);
-// calculate_category_utility([root, root2]);
-
-const root = initialize_tree(headers, rows[0]);
-
-cobweb(root, rows[1]);
-cobweb(root, rows[2]);
-cobweb(root, rows[3]);
-cobweb(root, rows[4]);
-cobweb(root, rows[5]);
-
-console.log(root);
-// console.log(root.copy());
