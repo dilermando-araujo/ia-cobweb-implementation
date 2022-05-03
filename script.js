@@ -32,9 +32,9 @@ class Node {
     }
 }
 
-const headers = [];
-const rows = [];
-const root = null;
+let headers = [];
+let rows = [];
+let root = null;
 
 // tests
 // const headers = ['colour', 'nuclei', 'tails'];

@@ -25,18 +25,46 @@
         }
 
         #body {
-            height: 500px;
+            height: 350px;
             border: solid 1px black;
+        }
+
+        .title-content {
+            margin-top: 1px;
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
     
-    <div id="body">
+    <div id="table-container">
+        <div style="margin-bottom: 5px">
+            <button onclick="add_column_to_table_value()">Adicionar coluna</button>
+            <button onclick="remove_column_from_table_value()">Remover última coluna</button>
+            <button onclick="add_row_to_table_value()">Adicionar linhas</button>
+            <button onclick="remove_row_from_table_value()">Remover última linha</button>
+        </div>
+        <table id="table-content">
+        </table>
+        <div style="margin-top: 5px">
+            <button onclick="execute_cobweb()">Executar Cobweb</button>
+        </div>
+    </div>
+    
+    <div id="tree-view-container" style="margin-top: 25px; display: none;">
+        <div>
+            <h2 class="title-content">Árvore</h2>
+        </div>
+        <div id="body">
+        </div>
+    </div>
+
+    <div id="clusters-view-container" style="margin-top: 25px;">
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
     <script src="script.js"></script>
     <script src="draw.js"></script>
+    <script src="table-editable.js"></script>
 </body>
 </html>

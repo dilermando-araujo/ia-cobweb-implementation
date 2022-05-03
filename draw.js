@@ -244,6 +244,3 @@ function generate_column_shorts_name(names) {
 
     return map_name_to_short;
 }
-
-function redraw(root) {
-}
