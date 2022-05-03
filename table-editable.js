@@ -19,6 +19,32 @@ function set_default_dataset(dataset_idx) {
             ['moisk-skin', '3', 'unregulated', 'external'],
             ['hair', '4', 'regulated', 'internal'],
             ['feathers', '4', 'regulated', 'internal']
+        ], 
+        3: [
+            ['Shape', 'Size', 'Color'],
+            ['square', 'large', 'blue'],
+            ['square', 'large', 'yellow'],
+            ['square', 'large', 'red'],
+            ['square', 'large', 'orange'],
+            ['square', 'large', 'green'],
+            ['circle', 'large', 'blue'],
+            ['circle', 'large', 'yellow'],
+            ['circle', 'large', 'red'],
+            ['circle', 'large', 'orange'],
+            ['circle', 'large', 'green']
+        ],
+        4: [
+            ['Shape', 'Size', 'Color'],
+            ['square', 'large', 'blue'],
+            ['circle', 'large', 'blue'],
+            ['square', 'large', 'yellow'],
+            ['circle', 'large', 'yellow'],
+            ['square', 'large', 'orange'],
+            ['circle', 'large', 'orange'],
+            ['square', 'large', 'red'],
+            ['circle', 'large', 'red'],
+            ['square', 'large', 'green'],
+            ['circle', 'large', 'green']
         ]
     }
 
