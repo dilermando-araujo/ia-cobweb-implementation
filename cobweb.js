@@ -36,37 +36,6 @@ let headers = [];
 let rows = [];
 let root = null;
 
-// tests
-// const headers = ['colour', 'nuclei', 'tails'];
-
-// const rows = [
-//     ['white', '1', '1'],
-//     ['white', '2', '2'],
-//     ['black', '2', '2'],
-//     ['black', '3', '1'],
-// ];
-
-// const headers = ['body-cover', 'heart-chamber', 'body-temp', 'fertilization'];
-
-// const rows = [
-//     ['scales', '2', 'unregulated', 'external'],
-//     ['moisk-skin', '3', 'unregulated', 'external'],
-//     ['hair', '4', 'regulated', 'internal'],
-//     ['feathers', '4', 'regulated', 'internal'],   
-//     ['scales', '2', 'unregulated', 'external'], 
-//     ['moisk-skin', '3', 'unregulated', 'external'],
-// ];
-
-// const headers = ['', 'body-temp', 'fertilization'];
-
-// const rows = [
-//     ['scales', '2', 'unregulated', 'external'],
-//     ['moisk-skin', '3', 'unregulated', 'external'],
-//     ['hair', '4', 'regulated', 'internal'],
-//     ['feathers', '4', 'regulated', 'internal'],    
-// ];
-// ----
-
 function get_value_repetition_amount(list) {
     const repetitions = {};
 
@@ -165,6 +134,7 @@ function calculate_category_utility(nodes) {
         tSum += (nodes[i].instances.length / instances.length) * (nodeSum);
     }
 
+    // const uc = tSum / nodes.length;
     const uc = (tSum - iSum) / nodes.length;
     return uc;
 }
@@ -288,4 +258,3 @@ function cobweb(root, instance) {
 
     }
 }
-
